@@ -27,7 +27,7 @@
          (into (sorted-map)))
     ;NAMES LASTNAMES
     :else
-    (let [name-parts (re-seq #"((?i)(?:de las|de los|de la|de|del|de) (?:[A-Z-azÁÉÍÓÚáéíóúñÑäöüÄÖÜß']+)|(?:[A-Z-azÁÉÍÓÚáéíóúñÑäöüÄÖÜß']+))" full-name)]
+    (let [name-parts (re-seq #"((?i)(?:de las|de los|de la|de|del|da) (?:[A-Z-azÁÉÍÓÚáéíóúñÑäöüÄÖÜß']+)|(?:[A-Z-azÁÉÍÓÚáéíóúñÑäöüÄÖÜß']+))" full-name)]
       (->> (hash-map :name (if (< (count name-parts) 4)
                              (->> (ffirst name-parts)
                                   (th/when->> capitalize
